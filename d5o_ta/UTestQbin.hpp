@@ -8,18 +8,17 @@
 #ifndef UTestQbin_hpp
 #define UTestQbin_hpp
 
-#include <stdio.h>
-
 #include <iostream>
 
 using namespace std;
 
-namespace dann5
+namespace dann5test
 {
     // Unit tests of Qbin operations
     class UTestQbin
     {
     public:
+        // Default constructor
         UTestQbin() {};
         
         // execute all unit tests

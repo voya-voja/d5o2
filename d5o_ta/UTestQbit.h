@@ -8,18 +8,17 @@
 #ifndef UTestQbit_h
 #define UTestQbit_h
 
-#include <stdio.h>
-
 #include <iostream>
 
 using namespace std;
 
-namespace dann5
+namespace dann5test
 {
     // Unit tests of Qbit operations
     class UTestQbit
     {
     public:
+        // Default constructor
         UTestQbit() {};
         
         // execute all unit tests

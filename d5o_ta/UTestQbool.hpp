@@ -8,18 +8,17 @@
 #ifndef UTestQbool_hpp
 #define UTestQbool_hpp
 
-#include <stdio.h>
-
 #include <iostream>
 
 using namespace std;
 
-namespace dann5
+namespace dann5test
 {
     // Unit tests of Qbit operations
     class UTestQbool
     {
     public:
+        // Default constructor
         UTestQbool() {};
         
         // execute all unit tests

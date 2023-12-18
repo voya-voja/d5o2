@@ -8,13 +8,11 @@
 #ifndef UTestULint_hpp
 #define UTestULint_hpp
 
-#include <stdio.h>
-
 #include <iostream>
 
 using namespace std;
 
-namespace dann5
+namespace dann5test
 {
     // Unit tests of Qbin operations
     class UTestULint
