@@ -133,34 +133,35 @@ void testPNcandidates()
     char line[800];
     vector<ULint> primes;
 #ifdef _WINDOWS
-    pnFstream.open("..//.//d5o_ta//d5o_py//pnCandidates.txt");
+    pnFstream.open("..//.//d5o_ta//d5o_py//PNs.txt");
 #else
-    pnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//pnCandidates.txt");
+    pnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//PNs.txt");
 #endif
     bool fo = pnFstream.is_open();
     while (pnFstream.getline(line, 800))
     {
         cout << line << endl;
         ULint prime(line);
-        cout << prime.toString() << endl;
         primes.push_back(prime);
     }
     sort(primes.begin(), primes.end());
     pnFstream.close();
     ofstream spnFstream;
 #ifdef _WINDOWS
-    spnFstream.open("..//.//d5o_ta//d5o_py//pnsSorted.txt");
+    spnFstream.open("..//.//d5o_ta//d5o_py//PNs_update.txt");
 #else
-    spnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//pnsSorted.txt");
+    spnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//PNs_update.txt");
 #endif
     ULint zero;
     for (auto candidate : primes)
     {
+        size_t factorExp = size_t(candidate.noBits() / 2 + 0.5); // ROUNDUP(LOG(131072, 2) / 2, 0)
+        ULint two(2), maxFactor = two.pow(factorExp);
         for (auto prime : primes)
         {
-            if (prime == candidate)
+            if (prime < maxFactor)//(prime == candidate)
             {
-                cout << candidate.toString() << " is PRIME" << endl;
+//                cout << candidate.toString() << " is PRIME" << endl;
                 spnFstream << candidate.toString() << endl;
                 break;
             }
@@ -176,51 +177,20 @@ void testPNcandidates()
 
 int main(int argc, const char * argv[])
 {
-/*
-    for (size_t nQbits = 2; nQbits <= 6; nQbits += 1)
-    {
-        Qwhole x(nQbits, "x"), y(size_t(nQbits / 2), "y"), r("r", nQbits);
-        Qassign<Qwhole> xpr = r = x * y;
-        Qanalyzer a(xpr.qubo());
-        cout << xpr << endl << "  nodes: " << a.nodesNo() << " branches: " << a.branchesNo() << " chain-strenght: " << a.chainStrength();
-        cout << endl << xpr.qubo() << endl << xpr.solve() << endl;
-    }
-    Qwhole x(2, "x"), y(1, "y"), z(1, "z"), _3("_3", 3);
-    Qexpr<Qwhole> qwExpr = x * y;//, z_3Expr = _3 * z, qxxExpr = qwExpr * z_3Expr;
-    Qubo qubo = qwExpr.qubo();
-    cout << qubo / 2 << endl;
-    Qanalyzer anlyzeE(qubo);
-    cout << "Expression # of nodes: " << anlyzeE.nodesNo() << " # of branches: " << anlyzeE.branchesNo() << endl;
-    cout << endl << "Expression:" << endl << qwExpr << endl << qwExpr.solve() << endl;
-    Qsolver::Samples samples = qwExpr.compute();
-    Qbinder binder;
-    binder = x, y;
-    binder.add(samples);
-    cout << binder << endl;
-    vector<ULint> xSolutions = dynamic_pointer_cast<Qwhole>(binder["x"])->ulints();
-    vector<ULint> ySolutions = dynamic_pointer_cast<Qwhole>(binder["y"])->ulints();
-    cout << "sample x  y" << endl;
-    for(size_t at = 0; at < samples.size(); at++)
-        cout << at << ":     " << xSolutions[at].toString() << "  " << ySolutions[at].toString() << endl;
-
-    qxxExpr.reset();
-    Qwhole R("R", 6);
-    Qassign<Qwhole> qxxAssign = R = qxxExpr;
-    Qubo aQubo = qxxAssign.qubo();
-    Qanalyzer anlyze(aQubo);
-    cout << "Assignment # of nodes: " << anlyze.nodesNo() << " # of branches: " << anlyze.branchesNo() << endl;
-    cout << endl << "Assignment:" << endl << qxxAssign << endl << qxxAssign.solve() << endl;
+    Qwhole x(2, "x"), y("y", 5), z(1, "z");
+    Qexpr<Qwhole> xA = x + y + z;
+    cout << xA.qubo();
 
     UTestQbit utQbit;
-//    utQbit.runAll(cout);
+    utQbit.runAll(cout);
     UTestQbool utQbool;
-//    utQbool.runAll(cout);
+    utQbool.runAll(cout);
     UTestQbin utQbin;
 //    utQbin.friends_enemies(cout);
-//    utQbin.runAll(cout);
+    utQbin.runAll(cout);
     UTestQwhole utQwhole;
-//    utQwhole.runAll(cout); 
-*/
+    utQwhole.runAll(cout); 
+
 //    pymain();
 
 //    testSolver();
