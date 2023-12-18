@@ -175,6 +175,7 @@
     <ClCompile Include="UTestQbit.cpp" />
     <ClCompile Include="UTestQbool.cpp" />
     <ClCompile Include="UTestQwhole.cpp" />
+    <ClCompile Include="UTestULint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\dann5\include\Factory.h" />
@@ -210,6 +211,7 @@
     <ClInclude Include="UTestQbit.h" />
     <ClInclude Include="UTestQbool.hpp" />
     <ClInclude Include="UTestQwhole.hpp" />
+    <ClInclude Include="UTestULint.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

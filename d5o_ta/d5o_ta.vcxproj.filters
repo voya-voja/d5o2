@@ -120,6 +120,9 @@
     <ClCompile Include="PNGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UTestULint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\dann5\include\Factory.h">
@@ -219,6 +222,9 @@
       <Filter>Header Files\dann5</Filter>
     </ClInclude>
     <ClInclude Include="PNGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UTestULint.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

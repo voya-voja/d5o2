@@ -107,34 +107,35 @@ void testPNcandidates()
     char line[800];
     vector<ULint> primes;
 #ifdef _WINDOWS
-    pnFstream.open("..//.//d5o_ta//d5o_py//pnCandidates.txt");
+    pnFstream.open("..//.//d5o_ta//d5o_py//PNs.txt");
 #else
-    pnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//pnCandidates.txt");
+    pnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//PNs.txt");
 #endif
     bool fo = pnFstream.is_open();
     while (pnFstream.getline(line, 800))
     {
         cout << line << endl;
         ULint prime(line);
-        cout << prime.toString() << endl;
         primes.push_back(prime);
     }
     sort(primes.begin(), primes.end());
     pnFstream.close();
     ofstream spnFstream;
 #ifdef _WINDOWS
-    spnFstream.open("..//.//d5o_ta//d5o_py//pnsSorted.txt");
+    spnFstream.open("..//.//d5o_ta//d5o_py//PNs_update.txt");
 #else
-    spnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//pnsSorted.txt");
+    spnFstream.open("//System//Volumes//Data//Developer//Work//d5o2//d5o_ta//d5o_py//PNs_update.txt");
 #endif
     ULint zero;
     for (auto candidate : primes)
     {
+        size_t factorExp = size_t(candidate.noBits() / 2 + 0.5); // ROUNDUP(LOG(131072, 2) / 2, 0)
+        ULint two(2), maxFactor = two.pow(factorExp);
         for (auto prime : primes)
         {
-            if (prime == candidate)
+            if (prime < maxFactor)//(prime == candidate)
             {
-                cout << candidate.toString() << " is PRIME" << endl;
+//                cout << candidate.toString() << " is PRIME" << endl;
                 spnFstream << candidate.toString() << endl;
                 break;
             }
@@ -190,6 +191,7 @@ void testAddFunc()
 
 int main(int argc, const char * argv[])
 {
+
     Qsolver::Active(D5QuboSolver::Sp(new D5QuboSolver()));
 
 //    testQminus();
@@ -209,6 +211,7 @@ int main(int argc, const char * argv[])
     UTestQbool utQbool;
     utQbool.runAll(cout);
     UTestQbin utQbin;
+
     utQbin.runAll(cout);
     UTestQwhole utQwhole;
     utQwhole.runAll(cout);
