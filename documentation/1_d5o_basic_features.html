@@ -14516,7 +14516,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Basic-Programmming-with-Dann5-d5o-2-library">Basic Programmming with <a href="https://github.com/voya-voja/d5o2">Dann5 d5o 2 library</a><a class="anchor-link" href="#Basic-Programmming-with-Dann5-d5o-2-library">&#182;</a></h1><p>In the <a href="https://cloud.dwavesys.com/learning/user/nebojsa_2evojinovic_40rogers_2ecom/notebooks/leap/demos/factoring/01-factoring-overview.ipynb">Leap factoring demo</a>, the D-Wave system can be used to factor a whole number by running a multiplication circuit in reverse. The factoring demo shows how can be solved a <a href="https://docs.ocean.dwavesys.com/en/stable/concepts/csp.html">constraint satisfaction problem (CSP)</a> on a QAC.</p>
-<p>In a way <strong>Dann5 d5o programming framework</strong> is an extension of python programming langue that provides a human friendly generalization of CSP implementation, which permits quantum programmers to use constructs such as data types definitions, expression and assignments to define problem to be solved on quantum computers, annealers or simulators via QUBO transformation.</p>
+<p>In a way <strong>Dann5 d5o programming framework</strong> is an extension of python programming language that provides a human friendly generalization of CSP implementation, which permits quantum programmers to use constructs such as data type definitions, expressions and assignments to define problems to be solved on quantum computers, annealers or simulators via QUBO transformation.</p>
 <p>This Jupyter Notebook demonstrates:</p>
 <ol>
 <li>definition of Qwhole variables and type conversion to Qbin using Dann5 d5o library</li>
@@ -14597,7 +14597,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <blockquote><p>The Q variable 'b' is of <strong>Qwhole type with U</strong>(nknown) <strong>value</strong>, meaning that <strong>at least one of its Qbits is in a S</strong>(uperposition)<strong> state</strong>. In this definition of Q variable 'b', all 3 Qbits are in S state.</p>
 </blockquote>
-<p>Both, 'a' and 'b' Q variables are defined as <em>Unknown</em>. HOwever, if we want to define a <strong>deterministic Q whole variable</strong> we specify its initialization value as in following definition:</p>
+<p>Both, 'a' and 'b' Q variables are defined as <em>Unknown</em>. However, if we want to define a <strong>deterministic Q whole variable</strong> we specify its initialization value as in following definition:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14667,7 +14667,7 @@ The binary presentation of an unknown Qwhole varaible a/4:U/ is a/4bU/,
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Defining-and-solving-d5o-2-quantum-assignment">Defining and solving d5o 2 quantum assignment<a class="anchor-link" href="#Defining-and-solving-d5o-2-quantum-assignment">&#182;</a></h2><p>We can now define a quantum assignment (Qassignment) by assign an addition quantum expression 'a' + 'b' to 'A':</p>
+<h2 id="Defining-and-solving-d5o-2-quantum-assignment">Defining and solving d5o 2 quantum assignment<a class="anchor-link" href="#Defining-and-solving-d5o-2-quantum-assignment">&#182;</a></h2><p>We can now define a quantum assignment (Qassignment) by assigning an addition quantum expression 'a' + 'b' to 'A':</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14949,7 +14949,7 @@ A/5:15/; a/4:15/; b/3:0/
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The <em>solve()</em> method returns all possible solutions of an assignment within the bounds of defined variables, i.e. the unknown variables Qbits sizes.</p>
 <ul>
-<li><strong>NOTE</strong>: 'a' = 8 and 'b' = 7 is a valid solution, but 'a' = 7 and 'b' = 8 is not as Qwhole variable 'b' is defined with only 3 Qbits. By carefully reviewing the returned results you will see that <em>8 &lt;= 'a' &lt;= 15</em> and <em>0 &lt;= 'b' &lt;= 7</em>, which are appropriate results considering that we set Q variable 'b' to have only 3 Qbits, i.e. imposing additional condition that 'b' cannot be bigger than 7.</li>
+<li><strong>NOTE</strong>: 'a' = 8 and 'b' = 7 is a valid solution, but 'a' = 7 and 'b' = 8 is not as Qwhole variable 'b' is defined with only 3 Qbits. By carefully reviewing the returned results you will see that <em>8 &lt;= 'a' &lt;= 15</em> and <em>0 &lt;= 'b' &lt;= 7</em>, which are appropriate results considering that we set Q variable 'b' to have only 3 Qbits, i.e. imposing the additional condition that 'b' cannot be bigger than 7.</li>
 </ul>
 <blockquote><p>If you go back and change only the number of Qbits for variable 'b', the solution set for Q assignment aA will be different</p>
 </blockquote>
@@ -15113,7 +15113,7 @@ M/7:15/; c/4:5/; d/3:3/
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Construction of a <em>quantum rutine with more then one related assignment</em> might require use of same variabled across multiple assignments and/or expressions, however this is an advanced feature, which will be covered later.</p>
+<p>Construction of a <em>quantum routine with more then one related assignment</em> might require use of the same variable across multiple assignments and/or expressions, however this is an advanced feature, which will be covered later.</p>
 
 </div>
 </div>
@@ -15121,7 +15121,7 @@ M/7:15/; c/4:5/; d/3:3/
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="d5o-2-assignment-conversion-to-QUBO">d5o 2 assignment conversion to QUBO<a class="anchor-link" href="#d5o-2-assignment-conversion-to-QUBO">&#182;</a></h2><p>Now we can convert the Q assignments 'aA' or eM to their <a href="https://minatoyuichiro.medium.com/qubo-select-k-qubits-from-n-qubits-on-qaoa-651dca0a0e9b">QUBO</a> presentation (<a href="https://docs.dwavesys.com/docs/latest/c_gs_3.html#qubo">learn more about QUBO in context of DWave  Binary Quadratic Models (BQM)</a>). 
 There are 2 forms of QUBO presentation that can be requested from a Q equation, <strong>generic</strong> and <strong>finalized</strong>.</p>
-<blockquote><p><strong>A generic QUBO</strong> is transformation where all Qassignment operations and variables are converted into qubo presentation wether they are deterministic or unknown (with Qbits in supperposition state).</p>
+<blockquote><p><strong>A generic QUBO</strong> is a transformation where all Qassignment operations and variables are converted into a qubo presentation wether they are deterministic or unknown (with Qbits in supperposition state).</p>
 </blockquote>
 <p>To retrieve a <strong>generic QUBO</strong> presentation of the Q assignment <em>aA</em> use <em>qubo</em> method with <em>finalized</em> argument set to <em>False</em>.</p>
 
@@ -15177,7 +15177,7 @@ Quadratic branches
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A Q assignment aA can be expressed as a QUBO problem defined using an upper-diagonal matrix gQaA expresed as a python 'dict' class, where keys are 'tuple' pairs of variables Qbit level names and the values of the elements are linear and quadratic coefficients. The key 'tuple' pairs with the same variable Qbit level name are <strong>linear nodes</strong>, while those those with diferent names are <strong>quadratic branches</strong>, as per DWave <a href="https://docs.dwavesys.com/docs/latest/c_gs_3.html#objective-functions">Binary Quadratic Models</a>.</p>
+<p>A Q assignment aA can be expressed as a QUBO problem defined using an upper-diagonal matrix gQaA expresed as a python 'dict' class, where keys are 'tuple' pairs of variables Qbit level names and the values of the elements are linear and quadratic coefficients. The key 'tuple' pairs with the same variable Qbit level name are <strong>linear nodes</strong>, while those those with different names are <strong>quadratic branches</strong>, as per DWave <a href="https://docs.dwavesys.com/docs/latest/c_gs_3.html#objective-functions">Binary Quadratic Models</a>.</p>
 <blockquote><p><strong>A finalized QUBO</strong> is a consolidated <strong>generic QUBO</strong> where deterministic variables are replaced with their values.</p>
 </blockquote>
 <p>To retrieve a <strong>finalized QUBO</strong> presentation of the Q assignment <em>aA</em> use <em>qubo</em> method without arguments as <em>True</em> is a default value for <em>finalized</em> argument.</p>
@@ -15334,7 +15334,7 @@ A/5:15/; a/4:13/; b/3:2/
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Note that we have used <strong>sampleset.lowest().samples()</strong> to ensure that from the whole sampleset of all posible solution of QUBO, we retrieve only those with the lowest energy level as the best solution for our <em>aA</em> Q assignment.</p>
+<blockquote><p>Note that we have used <strong>sampleset.lowest().samples()</strong> to ensure that from the whole sampleset of all possible solutions of QUBO, we retrieve only those with the lowest energy level as the best solution for our <em>aA</em> Q assignment.</p>
 </blockquote>
 <p>The same <strong>finalized QUBO</strong> can be executed on <a href="https://docs.dwavesys.com/docs/latest/c_solver_parameters.html">quantum annealing computer (QAC)</a>:</p>
 
@@ -15632,7 +15632,7 @@ A/5:15/; _+15/5:15/; a/4:15/; b/3:0/
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Using-Constants-in-a-Q-assignment">Using Constants in a Q assignment<a class="anchor-link" href="#Using-Constants-in-a-Q-assignment">&#182;</a></h2><p>A definition and use of a constant in d5o is same as definition of any other variable with a deterministic value. In order to easily distinguish constants from variables we recommend following syntax as an example of best coding practice:</p>
+<h2 id="Using-Constants-in-a-Q-assignment">Using Constants in a Q assignment<a class="anchor-link" href="#Using-Constants-in-a-Q-assignment">&#182;</a></h2><p>A definition and use of a constant in d5o is same as a definition of any other variable with a deterministic value. In order to easily distinguish constants from variables we recommend the following syntax as an example of best coding practice:</p>
 <blockquote><p>_ _15 = Qvar("15__", 15)</p>
 </blockquote>
 <p>Based on above we can make a Q whole definition such as:</p>
