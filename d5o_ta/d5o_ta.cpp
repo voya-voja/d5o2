@@ -179,7 +179,9 @@ int main(int argc, const char * argv[])
 {
     Qwhole x(2, "x"), y("y", 5), z(1, "z");
     Qexpr<Qwhole> xA = x + y + z;
-    cout << xA.qubo();
+    cout << xA << endl << xA.toString(true) << endl;
+    cout << xA.qubo() << endl;
+    cout << xA.solve();
 
     UTestQbit utQbit;
     utQbit.runAll(cout);

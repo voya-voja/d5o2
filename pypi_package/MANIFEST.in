@@ -1,2 +1,11 @@
-# This actually adds the data file.
+# This actually adds the data file. It could be that package_data in 
+# setup.py is enough.
+
+# Windows x64
 include dann5/d5o2.cp310-win_amd64.pyd
+
+# mac OS X
+#include dann5/d5o2.cpython-310-darwin.so
+
+# linux
+#include dann5/d5o2.so
